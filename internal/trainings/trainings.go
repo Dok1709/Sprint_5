@@ -35,6 +35,9 @@ func (t *Training) Parse(datastring string) (err error) {
 	if err != nil {
 		return err
 	}
+	if t.Duration <= 0 {
+		return errors.New("длительность тренировки должна быть больше нуля")
+	}
 	return nil
 }
 
